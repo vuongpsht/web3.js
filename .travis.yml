@@ -1,3 +1,8 @@
-language: node_js
-node_js:
-  - 12
+jobs:
+  include:
+    - stage: "Test"
+      language: node_js
+      node_js: 12
+      name: "CI Unit Tests"
+      script:
+        - TEST="unit" npm run ci
