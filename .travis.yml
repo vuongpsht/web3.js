@@ -6,6 +6,10 @@ node_js:
   - 12
   - 13
 
+install:
+  - npm install
+  - npm run postinstall
+
 jobs:
   include:
     - stage: build_and_lint
