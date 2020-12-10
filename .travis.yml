@@ -1,8 +1,46 @@
+language: node_js
+node_js:
+  - 8
+  - 10
+  - 11
+  - 12
+  - 13
+
 jobs:
   include:
-    - stage: "Test"
-      language: node_js
-      node_js: 12
-      name: "CI Unit Tests"
-      script:
-        - TEST="unit" npm run ci
+    - stage: build_and_lint
+      name: Build and Lint
+      env: TEST=build_and_lint
+      script: npm run ci
+    - stage: unit
+      name: unit
+      env: TEST=unit
+      script: npm run ci
+    - stage: unit_and_e2e_clients
+      name: unit_and_e2e_clients
+      env: TEST=unit_and_e2e_clients
+      script: npm run ci
+    - stage: e2e_browsers
+      name: e2e_browsers
+      env: TEST=e2e_browsers
+      script: npm run ci
+    - stage: e2e_truffle
+      name: e2e_truffle
+      env: TEST=e2e_truffle
+      script: npm run ci
+    - stage: e2e_mosaic
+      name: e2e_mosaic
+      env: TEST=e2e_mosaic
+      script: npm run ci
+    - stage: e2e_windows
+      name: e2e_windows
+      env: TEST=e2e_windows
+      script: npm run ci
+    - stage: e2e_ganache
+      name: e2e_ganache
+      env: TEST=e2e_ganache
+      script: npm run ci
+    - stage: e2e_gnosis_dex
+      name: e2e_gnosis_dex
+      env: TEST=e2e_gnosis_dex
+      script: npm run ci
