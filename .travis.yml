@@ -9,38 +9,64 @@ node_js:
 jobs:
   include:
     - stage: build_and_lint
-      name: Build and Lint
+      name: build_and_lint
+      language: node_js
+      node_js: 13
       env: TEST=build_and_lint
       script: npm run ci
+
     - stage: unit
       name: unit
+      language: node_js
+      node_js: 13
       env: TEST=unit
       script: npm run ci
+
     - stage: unit_and_e2e_clients
       name: unit_and_e2e_clients
+      language: node_js
+      node_js: 13
       env: TEST=unit_and_e2e_clients
       script: npm run ci
+
     - stage: e2e_browsers
       name: e2e_browsers
+      language: node_js
+      node_js: 13
       env: TEST=e2e_browsers
       script: npm run ci
+
     - stage: e2e_truffle
       name: e2e_truffle
+      language: node_js
+      node_js: 13
       env: TEST=e2e_truffle
       script: npm run ci
+
     - stage: e2e_mosaic
       name: e2e_mosaic
+      language: node_js
+      node_js: 13
       env: TEST=e2e_mosaic
       script: npm run ci
+
     - stage: e2e_windows
       name: e2e_windows
+      language: node_js
+      node_js: 13
       env: TEST=e2e_windows
       script: npm run ci
+
     - stage: e2e_ganache
       name: e2e_ganache
+      language: node_js
+      node_js: 13
       env: TEST=e2e_ganache
       script: npm run ci
+
     - stage: e2e_gnosis_dex
       name: e2e_gnosis_dex
+      language: node_js
+      node_js: 13
       env: TEST=e2e_gnosis_dex
       script: npm run ci
